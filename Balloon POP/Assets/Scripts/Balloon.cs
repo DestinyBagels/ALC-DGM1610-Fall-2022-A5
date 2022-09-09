@@ -6,7 +6,7 @@ public class Balloon : MonoBehaviour
 {
     public int scoreToGive = 100; // score give for popped balloon.
 
-    public int clickToPop = 3; //How many clicks before balloon pops
+    public int clickToPop = 2; //How many clicks before balloon pops
 
     public float scaleToIncrease = 0.10f; //scale increase each time the balloon is clicked
 
