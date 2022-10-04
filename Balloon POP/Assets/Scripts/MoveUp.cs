@@ -9,12 +9,9 @@ public class MoveUp : MonoBehaviour
     public float upperBound = 25.0f;
     private Balloon balloon;
 
-    private ScoreManager scoreManager; // a variable to reference the ScoreManager
-
     // Start is called before the first frame update
     void Start()
     {
-        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
         balloon = GetComponent<Balloon>();
     }
 
@@ -27,7 +24,6 @@ public class MoveUp : MonoBehaviour
         //Destroy Balloon after it passes upperbound
         if(transform.position.y > upperBound)
         {
-            scoreManager.DecreaseScoreText(balloon.scoreToGive); // subtract scoreTogive from total score
             Destroy(gameObject); // POP balloon
 
         }

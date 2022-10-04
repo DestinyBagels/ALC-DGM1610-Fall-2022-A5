@@ -10,12 +10,9 @@ public class Balloon : MonoBehaviour
 
     public float scaleToIncrease = 0.10f; //scale increase each time the balloon is clicked
     
-    private ScoreManager scoreManager; // A variable to reference the ScoreManager
-
     void start()
     {
         //Reference ScoreManager Component
-        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
     void OnMouseDown()
     {
@@ -26,7 +23,6 @@ public class Balloon : MonoBehaviour
 
         if(clickToPop == 0)
         {
-            scoreManager.IncreaseScoreText(scoreToGive);
             Destroy(gameObject);
         }
     }
