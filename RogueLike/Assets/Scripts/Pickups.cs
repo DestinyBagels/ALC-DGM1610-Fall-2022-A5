@@ -8,7 +8,6 @@ public  class Pickups : MonoBehaviour
     public int amount;
     public int value;
 
-<<<<<<< HEAD
     private GameManager gm;
 
     // Start is called before the first frame update
@@ -19,13 +18,4 @@ public  class Pickups : MonoBehaviour
 
 
 
-=======
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
->>>>>>> main
 }

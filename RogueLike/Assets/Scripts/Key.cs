@@ -14,15 +14,6 @@ public class Key : Pickups
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-<<<<<<< HEAD
-=======
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
->>>>>>> main
         void OnTriggerEnter2D(Collider2D other)
     {
         //PIckup key
