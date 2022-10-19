@@ -708,6 +708,7 @@ GameObject:
   - component: {fileID: 309277874}
   - component: {fileID: 309277877}
   - component: {fileID: 309277876}
+  - component: {fileID: 309277878}
   m_Layer: 0
   m_Name: GobHoblin
   m_TagString: Untagged
@@ -829,6 +830,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &309277878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309277873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e63dd932f9f5840018976de62704148d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  stopDistance: 5
+  retreatDistance: 5
+  startDelay: 0
+  projectile: {fileID: 0}
 --- !u!1 &317424828
 GameObject:
   m_ObjectHideFlags: 0
