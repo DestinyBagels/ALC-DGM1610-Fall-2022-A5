@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +8,8 @@ public class Projectile : MonoBehaviour
     public float speed;
     private Transform player;
     private Vector2 target;
+    public int damage;
+    public Health playerHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +33,9 @@ public class Projectile : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            playerHealth.TakeDamage(damage);
             DestroyProjectile();
+
         }
     }
 
