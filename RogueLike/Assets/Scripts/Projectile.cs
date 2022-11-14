@@ -14,6 +14,7 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerHealth = GameObject.Find("Player").GetComponent<Health>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         target = new Vector2(player.position.x, player.position.y);
     }
@@ -25,16 +26,20 @@ public class Projectile : MonoBehaviour
 
        if(transform.position.x == target.x && transform.position.y == target.y)
        {
-           DestroyProjectile();
+           Destroy(gameObject);
        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if(other.CompareTag("Walls"))
+        {
+            DestroyProjectile();
+        }
         if(other.CompareTag("Player"))
         {
             playerHealth.TakeDamage(damage);
-            DestroyProjectile();
+            Destroy(gameObject);
 
         }
     }
