@@ -5,14 +5,17 @@ using UnityEngine;
 public class HomeBase : MonoBehaviour
 {
 
-    pirvate GameObject flag;
     private GameManager gm;
+    private Renderer flagRend;
 
 
     // Start is called before the first frame update
     void Start()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        flagRend = GameObject.Find("FlagHome").GetComponent<Renderer>();
+
+        flagRend.enabled = false;
     }
 
     // Update is called once per frame
@@ -21,13 +24,13 @@ public class HomeBase : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if(other.CompareTag("Player") && gm.hasFlag)
         {
-            Debug.Log("Player has reached Homebase!")
+            Debug.Log("Player has reached Homebase!");
             gm.PlaceFlag();
-            flag.SetActive(true);
+            flagRend.enabled = true;
         }
     }
 }

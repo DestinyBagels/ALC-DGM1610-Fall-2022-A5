@@ -5,10 +5,13 @@ using UnityEngine;
 public class Flag : MonoBehaviour
 {
     private GameManager gm;
+    private Renderer rend;
     // Start is called before the first frame update
     void Start()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>(); // Find and reference GameManager
+        rend = GetComponent<Renderer>();
+        rend.enabled = true;
     }
 
     // Update is called once per frame
@@ -23,7 +26,7 @@ public class Flag : MonoBehaviour
         {
             gm.hasFlag = true;
             Debug.Log("You have the flag!");
-            Destroy(GameObject);
+            rend.enabled = false; //hide the flag
         }
     }
 }
